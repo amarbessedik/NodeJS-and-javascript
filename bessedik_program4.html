@@ -1,0 +1,60 @@
+<html ng-app="demo">
+
+<head>
+    <title>Sample App</title>
+
+    <!-- Add JQuery + Bootstrap JS / CSS + AngularJS-->
+    <script src="./vendor/jquery/jquery.js"></script>
+    <script src="./vendor/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="./vendor/bootstrap/css/bootstrap.css">
+    <script src="./vendor/angular/angular.js"></script>
+    <script src="./vendor/angular/angular-route.js"></script>
+
+    <script>
+        var demoApp = angular.module('demo', []);
+        demoApp.controller('MainController', ['$scope', function ($scope) {
+            // Hide message at the start
+            $scope.showGreeting = false;
+
+            $scope.vm = {
+                name: "foo",
+                clearName: function () {
+                    this.name = ""
+                },
+                age: "0",
+                nextYearAge: "0",
+                incrementAge: function () {
+                    this.nextYearAge = this.age + 1;
+                    //Show message when 'predictAge' button is pressed
+                    $scope.showGreeting = true;
+                },
+                clearAge: function () {
+                    this.age = 0;
+                    this.nextYearAge = 0;
+                    //Hide message message when 'clearAge' is pressed
+                    $scope.showGreeting = false;
+                }
+            };
+
+            
+        }]);
+    </script>
+
+</head>
+
+<body ng-controller="MainController">
+<!-- Our HTML -->
+<label>Type your name:</label>
+<input type="text" ng-model="vm.name" />
+<label>Your age: </label>
+<input type="number" ng-model="vm.age" />
+<div>Hello {{vm.name}}!</div>
+<button class="btn btn-danger" ng-click="vm.clearName()">Clear Name</button>
+<button class="btn btn-danger" ng-click="vm.incrementAge()">Predict my age next year</button>
+<button class="btn btn-danger" ng-click="vm.clearAge()">Clear Age</button>
+<div ng-show = "showGreeting">Hello {{vm.name}}! Next year, you will become {{vm.nextYearAge}} years old!</div>
+
+</body>
+</html>
+
+</html>

@@ -1,0 +1,132 @@
+<html>
+
+<head>
+    <title>HTML FILE SERVER</title>
+    <script type="text/javascript" src="./javascript/main.js">
+
+    </script>
+
+    <style>
+        #content {
+            width: 80%;
+            height: 200%;
+            border: 1px solid black;
+            margin: 0 auto;
+            background-color: #E8E8E8;
+        }
+
+        .center_images {
+            margin: auto auto;
+            width: 80%;
+        }
+
+        .b1 {
+            color: red;
+        }
+
+        .b2 {
+            color: white;
+        }
+
+        #message {
+            border: white;
+            background-color: #2F4E6F;
+            border-style: solid;
+            margin: 0 auto;
+            width: 80%;
+            height: 1in"
+
+        }
+
+        div.album {
+            margin: 5px;
+            border: 1px solid #ccc;
+            float: left;
+            width: 300px;
+            height: 500px;
+        }
+
+        div.album:hover {
+            border: 1px solid red;
+        }
+
+        div.album img {
+            width: 100%;
+            height: 250px;
+        }
+
+        div.desc {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .fnt {
+            color: black;
+            font-family: Trebuchet MS;
+            font-size: 18;
+        }
+
+        .fnt1 {
+            color: red
+        }
+
+        .file_type {
+            color: black;
+            background-color: orange
+        }
+
+        .btn {
+            height: 5%;
+            width: 25%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <div>
+            <div class="file_type">
+                <h2>YOU ARE VISUALZING THE <strong class="b1">.HTML</strong> FILE</h2>
+            </div>
+            <br><br>
+            <div id="message">
+                <p align="center">
+                    <font class="fnt">This webpage is a <strong class="b2">'.html' </strong> file and it contains some images, javascript,
+                        text and a little bit of css.
+                        <br> You can see each image individually and return back to the main page.</font>
+                </p>
+            </div><br><br>
+
+
+            <div class="center_images">
+                <div class="album">
+                    <img src="./images/image1.jpg" alt="image1" width="450" height="350">
+                    <div class="desc">Birds</div>
+                    <button class="btn" onclick="showQuote('img1', 'I always wonder why birds stay in the same place when they can fly anywhere on the earth. Then I ask myself the same question! H. Yahya')">
+                        <strong><font class="fnt1">Quote</font></strong></button>
+                    <p id="img1"></p>
+                </div>
+
+                <div class="album">
+                    <img src="./images/image2.jpg" alt="image2" width="450" height="350">
+                    <div class="desc">Outer Space</div>
+                    <button class="btn" onclick="showQuote('img2','The odds of me coming into the rocket business, not knowing anything about rockets, <br>not having ever built anything, I mean, I would have to be insane if I thought the odds were in my favor. E. Musk')">
+                    <strong><font class="fnt1">Quote</font></strong></button>
+                    <p id="img2"></p>
+                </div>
+
+
+                <div class="album">
+                    <img src="./images/image3.jpg" alt="image3" width="450" height="350">
+                    <div class="desc">Tourists</div>
+                    <button class="btn" onclick="zoomUp()"><strong><font class="fnt1">Zoom</font></strong></button>
+                    <p id="img3"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
